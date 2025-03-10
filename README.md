@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Movie Uploader Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based application for uploading and previewing movie data. It allows users to upload movie data, view a preview of the uploaded movies, search for movies by title and language(optional) and filter by genre  via the TMDB API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Upload movies data in bulk.
+- View a preview of uploaded movies with the option to remove them.
+- Search for movies using the TMDB API and manually add them to the preview.
+- Support for movie title searches in multiple languages.
+- Genre filtration of the search results.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before you begin, ensure you have the following installed on your machine:
 
-### `npm test`
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **API Token Setup**
 
-### `npm run build`
+To access the API in this application, you will need a valid API token. The token should be placed in the `.env` file, which is used to authenticate requests made to the API.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Steps to Get Your API Token:**
+1. Go to [API provider's website](https://www.themoviedb.org/signup) and create a free account.
+2. After creating an account, log in to your dashboard and find your API token [here](https://www.themoviedb.org/settings/api).
+3. Copy the token.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Setting Up the API Token in Your Project:**
+1. In the root of your project, locate the `.env` file. If the file does not exist, create it.
+2. Add the following line to the `.env` file:
+    ```bash
+    REACT_APP_TMDB_API_KEY=your-api-token-here
+    ```
+3. Replace `your-api-token-here` with the token you copied in Step 2.
+4. The application will automatically use the token from the `.env` file to make requests to the API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Security Note:**
+For development purposes, the API token is stored in the `.env` file. However, remember that this is not secure for production environments. In a production setup, it is recommended to store API tokens securely on the backend and never expose them in the frontend code.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/your-username/movie-uploader.git
+   ```
+2. Navigate to the project folder:
+    ```bash
+    cd movie-uploader
+    ```
+3. Install the project dependencies:
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. To start the development server:
+    ```bash
+    npm start
+    ```
 
-## Learn More
+2. Open your browser and visit http://localhost:3000 to view the app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Folder Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##The project is organized as follows:
 
-### Code Splitting
+- `src/`: Contains all the React components and pages.
+  - `components/`: Reusable components like `MovieCard`, `MovieSearch`, etc.
+  - `pages/`: Specific pages like `UploadFilePage` and `PreviewMoviesPage`.
+  - `api/`: Contains services to communicate with external APIs (e.g., for fetching movie data).
+- `public/`: Static files like `index.html` and `favicon.ico`.
+- `App.js`: The root component where the main app logic resides.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### License
 
-### Analyzing the Bundle Size
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
