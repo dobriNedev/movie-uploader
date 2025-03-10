@@ -65,6 +65,34 @@ For development purposes, the API token is stored in the `.env` file. However, r
 
 2. Open your browser and visit http://localhost:3000 to view the app.
 
+## Testing the Save Functionality
+
+To test the save functionality in the project, follow these steps:
+
+1. Open the `tmdb.js` file in your project.
+2. Locate the `saveMovies` function. In this function, you will find an API request to save the movies:
+    ```javascript
+    let response = await fetch("https://dummyapi.com/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: payload,
+    });
+    ```
+
+3. Inside the comments of the `saveMovies` function, you will find instructions to mock the response for testing purposes. 
+
+4. Comment out the `fetch` call and uncomment these lines (mocked response) like this:
+    ```javascript
+    const response = { ok: true };
+    ```
+
+This will simulate a successful save operation without making an actual API request.
+
+5. Once you've completed the testing, you can uncomment the original `fetch` code to restore the functionality.
+
+This process will allow you to test the save functionality without needing access to the real API. Make sure to follow the comments in the code for detailed instructions.
+
+
 ### Folder Structure
 
 ##The project is organized as follows:
